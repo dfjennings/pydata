@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block main %}
+  <p>Hello, again.</p>
+  <form action="/" method="post">
+    <label for="sqft">square feet of home:</label>
+    <input type="number" min="1" id="sqft" name="sqft" />
+    <p>
+        <label for"condition">condition</label>
+        <input type="number" min="0" max="5" step="0.01" id="condition" name="condition" />
+    <p>
+        <button type="submit">submit</button>
+    </p>
+  </form>
+  {% if valuation %}
+    <p> You entered {{ sqft }} as the square footage of the home and {{ condition }}. We estimate the value of
+        the home to be {{ valuation }}.</p>
+  {% endif %}
+{% endblock main %}
